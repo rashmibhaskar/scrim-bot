@@ -9,5 +9,6 @@ export default defineConfig({
 		SUPABASE_API_KEY: `"${process.env.SUPABASE_API_KEY}"`,
 		SUPABASE_URL_LC_CHATBOT: `"${process.env.SUPABASE_URL_LC_CHATBOT}"`,
 	  },
-	plugins: []	
+	plugins: []	,
+	base: "/scrim-bot/"
 })
