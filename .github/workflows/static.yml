@@ -23,9 +23,10 @@ jobs:
           SUPABASE_API_KEY: ${{ secrets.SUPABASE_API_KEY }}
           SUPABASE_URL_LC_CHATBOT: ${{ secrets.SUPABASE_URL_LC_CHATBOT }}
       
-
       - name: Deploy to GitHub Pages
         id: deployment
+        permissions:
+          id-token: write
         uses: actions/deploy-pages@v4
         with:
           publish_dir: ./dist  
