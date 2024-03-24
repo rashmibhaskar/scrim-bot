@@ -26,7 +26,8 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
         with:
-          publish_dir: ./dist  
+          github_token: ${{ env.GITHUB_TOKEN }}
+          publish_dir: ./dist 
 # Adjust the directory if your build output is different
 # Simple workflow for deploying static content to GitHub Pages
 #
