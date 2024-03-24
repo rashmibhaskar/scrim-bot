@@ -25,7 +25,7 @@ document.addEventListener('submit', (e) => {
  *    checking in the next question to see if it remembers it.
  * 
  * */ 
-const openAIApiKey = OPENAI_API_KEY
+const openAIApiKey = import.meta.env.VITE_OPENAI_API_KEY
 const llm = new ChatOpenAI({ openAIApiKey })
 
 const standaloneQuestionTemplate = `Given some conversation history (if any) and a question, convert the question to a standalone question. 
