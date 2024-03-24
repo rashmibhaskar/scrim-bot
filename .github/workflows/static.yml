@@ -18,14 +18,18 @@ jobs:
 
       - name: Build Vite.js application
         run: npm run build  # Or any other build command for your Vite.js app
-
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
+        env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           SUPABASE_API_KEY: ${{ secrets.SUPABASE_API_KEY }}
           SUPABASE_URL_LC_CHATBOT: ${{ secrets.SUPABASE_URL_LC_CHATBOT }}
-          publish_dir: ./dist  # Adjust the directory if your build output is different
+      
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+        with:
+          publish_dir: ./dist  
+# Adjust the directory if your build output is different
 # Simple workflow for deploying static content to GitHub Pages
 #
 # jobs:
